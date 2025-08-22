@@ -1,32 +1,42 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Code, Smartphone, Globe, Zap, Users, Award } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Code,
+  Smartphone,
+  Globe,
+  Zap,
+  Users,
+  Award,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const services = [
     {
       icon: <Code className="h-8 w-8" />,
-      title: 'Web Development',
-      description: 'Modern, responsive websites built with cutting-edge technologies'
+      title: "Web Development",
+      description:
+        "Modern, responsive websites built with cutting-edge technologies",
     },
     {
       icon: <Smartphone className="h-8 w-8" />,
-      title: 'Mobile Apps',
-      description: 'Native and cross-platform mobile applications for iOS and Android'
+      title: "Mobile Apps",
+      description:
+        "Native and cross-platform mobile applications for iOS and Android",
     },
     {
       icon: <Globe className="h-8 w-8" />,
-      title: 'Cloud Solutions',
-      description: 'Scalable cloud infrastructure and deployment solutions'
-    }
+      title: "Cloud Solutions",
+      description: "Scalable cloud infrastructure and deployment solutions",
+    },
   ];
 
   const stats = [
-    { number: '50+', label: 'Projects Completed' },
-    { number: '25+', label: 'Happy Clients' },
-    { number: '3+', label: 'Years Experience' },
-    { number: '100%', label: 'Client Satisfaction' }
+    { number: "50+", label: "Projects Completed" },
+    { number: "25+", label: "Happy Clients" },
+    { number: "3+", label: "Years Experience" },
+    { number: "100%", label: "Client Satisfaction" },
   ];
 
   return (
@@ -50,9 +60,11 @@ const Home = () => {
               <span className="gradient-text block">Excellence</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              We transform innovative ideas into powerful software solutions that drive business growth and create exceptional user experiences.
+              We transform innovative ideas into powerful software solutions
+              that drive business growth and create exceptional user
+              experiences.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link to="/contact">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
@@ -75,12 +87,15 @@ const Home = () => {
             </div>
           </motion.div>
         </div>
-        
+
         {/* Floating Elements */}
         <div className="absolute top-20 left-10 floating-animation">
           <div className="w-20 h-20 bg-blue-500/20 rounded-full blur-xl"></div>
         </div>
-        <div className="absolute bottom-20 right-10 floating-animation" style={{ animationDelay: '2s' }}>
+        <div
+          className="absolute bottom-20 right-10 floating-animation"
+          style={{ animationDelay: "2s" }}
+        >
           <div className="w-32 h-32 bg-purple-500/20 rounded-full blur-xl"></div>
         </div>
       </section>
@@ -98,7 +113,8 @@ const Home = () => {
               Our <span className="gradient-text">Services</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              We offer comprehensive software development services to bring your vision to life
+              We offer comprehensive software development services to bring your
+              vision to life
             </p>
           </motion.div>
 
@@ -155,7 +171,8 @@ const Home = () => {
               <span className="gradient-text block">Amazing?</span>
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Let's discuss your project and turn your ideas into reality with our expert development team.
+              Let's discuss your project and turn your ideas into reality with
+              our expert development team.
             </p>
             <Link to="/contact">
               <motion.button
