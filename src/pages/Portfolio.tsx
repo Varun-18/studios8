@@ -1,83 +1,96 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ExternalLink, Github, Filter } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { ExternalLink, Github, Filter } from "lucide-react";
 
 const Portfolio = () => {
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeFilter, setActiveFilter] = useState("all");
 
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A modern e-commerce platform with advanced features including real-time inventory, payment processing, and analytics dashboard.',
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'web',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      liveUrl: '#',
-      githubUrl: '#'
+      title: "E-Commerce Platform",
+      description:
+        "A modern e-commerce platform with advanced features including real-time inventory, payment processing, and analytics dashboard.",
+      image:
+        "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
+      category: "web",
+      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+      liveUrl: "#",
+      githubUrl: "#",
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, team collaboration features, and project tracking.',
-      image: 'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'mobile',
-      technologies: ['React Native', 'Firebase', 'Redux'],
-      liveUrl: '#',
-      githubUrl: '#'
+      title: "Task Management App",
+      description:
+        "A collaborative task management application with real-time updates, team collaboration features, and project tracking.",
+      image:
+        "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800",
+      category: "mobile",
+      technologies: ["React Native", "Firebase", "Redux"],
+      liveUrl: "#",
+      githubUrl: "#",
     },
     {
       id: 3,
-      title: 'Healthcare Dashboard',
-      description: 'A comprehensive healthcare management system with patient records, appointment scheduling, and analytics.',
-      image: 'https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'web',
-      technologies: ['Next.js', 'PostgreSQL', 'Chart.js'],
-      liveUrl: '#',
-      githubUrl: '#'
+      title: "Healthcare Dashboard",
+      description:
+        "A comprehensive healthcare management system with patient records, appointment scheduling, and analytics.",
+      image:
+        "https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=800",
+      category: "web",
+      technologies: ["Next.js", "PostgreSQL", "Chart.js"],
+      liveUrl: "#",
+      githubUrl: "#",
     },
     {
       id: 4,
-      title: 'Financial Analytics Platform',
-      description: 'Advanced financial analytics platform with real-time data visualization and predictive modeling capabilities.',
-      image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'web',
-      technologies: ['React', 'Python', 'D3.js', 'AWS'],
-      liveUrl: '#',
-      githubUrl: '#'
+      title: "Financial Analytics Platform",
+      description:
+        "Advanced financial analytics platform with real-time data visualization and predictive modeling capabilities.",
+      image:
+        "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800",
+      category: "web",
+      technologies: ["React", "Python", "D3.js", "AWS"],
+      liveUrl: "#",
+      githubUrl: "#",
     },
     {
       id: 5,
-      title: 'Social Media App',
-      description: 'A feature-rich social media application with real-time messaging, content sharing, and social networking features.',
-      image: 'https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'mobile',
-      technologies: ['React Native', 'Node.js', 'Socket.io'],
-      liveUrl: '#',
-      githubUrl: '#'
+      title: "Social Media App",
+      description:
+        "A feature-rich social media application with real-time messaging, content sharing, and social networking features.",
+      image:
+        "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=800",
+      category: "mobile",
+      technologies: ["React Native", "Node.js", "Socket.io"],
+      liveUrl: "#",
+      githubUrl: "#",
     },
     {
       id: 6,
-      title: 'Cloud Infrastructure',
-      description: 'Scalable cloud infrastructure solution with automated deployment, monitoring, and disaster recovery.',
-      image: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800',
-      category: 'cloud',
-      technologies: ['AWS', 'Docker', 'Kubernetes', 'Terraform'],
-      liveUrl: '#',
-      githubUrl: '#'
-    }
+      title: "Cloud Infrastructure",
+      description:
+        "Scalable cloud infrastructure solution with automated deployment, monitoring, and disaster recovery.",
+      image:
+        "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=800",
+      category: "cloud",
+      technologies: ["AWS", "Docker", "Kubernetes", "Terraform"],
+      liveUrl: "#",
+      githubUrl: "#",
+    },
   ];
 
   const categories = [
-    { id: 'all', name: 'All Projects' },
-    { id: 'web', name: 'Web Development' },
-    { id: 'mobile', name: 'Mobile Apps' },
-    { id: 'cloud', name: 'Cloud Solutions' }
+    { id: "all", name: "All Projects" },
+    { id: "web", name: "Web Development" },
+    { id: "mobile", name: "Mobile Apps" },
+    { id: "cloud", name: "Cloud Solutions" },
   ];
 
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
+  const filteredProjects =
+    activeFilter === "all"
+      ? projects
+      : projects.filter((project) => project.category === activeFilter);
 
   return (
     <motion.div
@@ -87,7 +100,7 @@ const Portfolio = () => {
       className="pt-16"
     >
       {/* Hero Section */}
-      <section className="py-20 bg-gray-800/50">
+      <section className="py-20 bg-gray-800/50 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -99,8 +112,9 @@ const Portfolio = () => {
               Our <span className="gradient-text">Portfolio</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Explore our collection of successful projects that showcase our expertise 
-              in delivering innovative software solutions across various industries.
+              Explore our collection of successful projects that showcase our
+              expertise in delivering innovative software solutions across
+              various industries.
             </p>
           </motion.div>
         </div>
@@ -121,8 +135,8 @@ const Portfolio = () => {
                 onClick={() => setActiveFilter(category.id)}
                 className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                   activeFilter === category.id
-                    ? 'gradient-bg text-white shadow-lg'
-                    : 'glass-effect text-gray-300 hover:text-white hover:bg-white/10'
+                    ? "gradient-bg text-white shadow-lg"
+                    : "glass-effect text-gray-300 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {category.name}
@@ -135,7 +149,7 @@ const Portfolio = () => {
       {/* Projects Grid */}
       <section className="pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             layout
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
@@ -174,13 +188,15 @@ const Portfolio = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
+                  <h3 className="text-xl font-semibold mb-3">
+                    {project.title}
+                  </h3>
                   <p className="text-gray-300 text-sm mb-4 line-clamp-3">
                     {project.description}
                   </p>
-                  
+
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, techIndex) => (
                       <span
@@ -199,7 +215,7 @@ const Portfolio = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gray-800/50">
+      <section className="py-20 bg-gray-800/50 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -214,10 +230,10 @@ const Portfolio = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: '50+', label: 'Projects Completed' },
-              { number: '25+', label: 'Happy Clients' },
-              { number: '15+', label: 'Industries Served' },
-              { number: '99%', label: 'Success Rate' }
+              { number: "50+", label: "Projects Completed" },
+              { number: "25+", label: "Happy Clients" },
+              { number: "15+", label: "Industries Served" },
+              { number: "99%", label: "Success Rate" },
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -245,10 +261,12 @@ const Portfolio = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl font-bold mb-6">
-              Ready to Create Your <span className="gradient-text">Success Story?</span>
+              Ready to Create Your{" "}
+              <span className="gradient-text">Success Story?</span>
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join our growing list of satisfied clients and let us help you build something amazing.
+              Join our growing list of satisfied clients and let us help you
+              build something amazing.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

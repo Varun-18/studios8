@@ -1,68 +1,72 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Clock, MessageCircle } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin, Send, Clock, MessageCircle } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    project: '',
-    budget: '',
-    message: ''
+    name: "",
+    email: "",
+    company: "",
+    project: "",
+    budget: "",
+    message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission here
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
     // You can integrate with your preferred form handling service
   };
 
   const contactInfo = [
     {
       icon: <Mail className="h-6 w-6" />,
-      title: 'Email Us',
-      details: 'connect@studios8.in',
-      description: 'Send us an email anytime!'
+      title: "Email Us",
+      details: "connect@studios8.in",
+      description: "Send us an email anytime!",
     },
     {
       icon: <Phone className="h-6 w-6" />,
-      title: 'Call Us',
-      details: '+91 XXX XXX XXXX',
-      description: 'Mon-Fri from 9am to 6pm'
+      title: "Call Us",
+      details: "+91 XXX XXX XXXX",
+      description: "Mon-Fri from 9am to 6pm",
     },
     {
       icon: <MapPin className="h-6 w-6" />,
-      title: 'Visit Us',
-      details: 'India',
-      description: 'Come say hello at our office'
-    }
+      title: "Visit Us",
+      details: "India",
+      description: "Come say hello at our office",
+    },
   ];
 
   const projectTypes = [
-    'Web Development',
-    'Mobile App Development',
-    'E-commerce Platform',
-    'Custom Software',
-    'Cloud Solutions',
-    'UI/UX Design',
-    'Other'
+    "Web Development",
+    "Mobile App Development",
+    "E-commerce Platform",
+    "Custom Software",
+    "Cloud Solutions",
+    "UI/UX Design",
+    "Other",
   ];
 
   const budgetRanges = [
-    '$5,000 - $10,000',
-    '$10,000 - $25,000',
-    '$25,000 - $50,000',
-    '$50,000 - $100,000',
-    '$100,000+'
+    "$5,000 - $10,000",
+    "$10,000 - $25,000",
+    "$25,000 - $50,000",
+    "$50,000 - $100,000",
+    "$100,000+",
   ];
 
   return (
@@ -73,7 +77,7 @@ const Contact = () => {
       className="pt-16"
     >
       {/* Hero Section */}
-      <section className="py-20 bg-gray-800/50">
+      <section className="py-20 bg-gray-800/50 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -85,8 +89,8 @@ const Contact = () => {
               Get In <span className="gradient-text">Touch</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Ready to start your next project? We'd love to hear from you. 
-              Send us a message and we'll respond as soon as possible.
+              Ready to start your next project? We'd love to hear from you. Send
+              us a message and we'll respond as soon as possible.
             </p>
           </motion.div>
         </div>
@@ -105,8 +109,9 @@ const Contact = () => {
             >
               <h2 className="text-3xl font-bold mb-8">Let's Talk</h2>
               <p className="text-gray-300 mb-8">
-                We're here to help bring your ideas to life. Whether you have a specific project in mind 
-                or just want to explore possibilities, we'd love to hear from you.
+                We're here to help bring your ideas to life. Whether you have a
+                specific project in mind or just want to explore possibilities,
+                we'd love to hear from you.
               </p>
 
               <div className="space-y-6">
@@ -124,7 +129,9 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold mb-1">{info.title}</h3>
                       <p className="text-blue-400 mb-1">{info.details}</p>
-                      <p className="text-gray-400 text-sm">{info.description}</p>
+                      <p className="text-gray-400 text-sm">
+                        {info.description}
+                      </p>
                     </div>
                   </motion.div>
                 ))}
@@ -141,7 +148,8 @@ const Contact = () => {
                   <h3 className="font-semibold">Response Time</h3>
                 </div>
                 <p className="text-gray-300 text-sm">
-                  We typically respond to all inquiries within 24 hours during business days.
+                  We typically respond to all inquiries within 24 hours during
+                  business days.
                 </p>
               </motion.div>
             </motion.div>
@@ -153,12 +161,18 @@ const Contact = () => {
               transition={{ duration: 0.8 }}
               className="lg:col-span-2"
             >
-              <form onSubmit={handleSubmit} className="glass-effect p-8 rounded-xl">
+              <form
+                onSubmit={handleSubmit}
+                className="glass-effect p-8 rounded-xl"
+              >
                 <h2 className="text-3xl font-bold mb-8">Start Your Project</h2>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium mb-2"
+                    >
                       Full Name *
                     </label>
                     <input
@@ -173,7 +187,10 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium mb-2"
+                    >
                       Email Address *
                     </label>
                     <input
@@ -191,7 +208,10 @@ const Contact = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <label htmlFor="company" className="block text-sm font-medium mb-2">
+                    <label
+                      htmlFor="company"
+                      className="block text-sm font-medium mb-2"
+                    >
                       Company Name
                     </label>
                     <input
@@ -205,7 +225,10 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="project" className="block text-sm font-medium mb-2">
+                    <label
+                      htmlFor="project"
+                      className="block text-sm font-medium mb-2"
+                    >
                       Project Type *
                     </label>
                     <select
@@ -218,14 +241,19 @@ const Contact = () => {
                     >
                       <option value="">Select project type</option>
                       {projectTypes.map((type, index) => (
-                        <option key={index} value={type}>{type}</option>
+                        <option key={index} value={type}>
+                          {type}
+                        </option>
                       ))}
                     </select>
                   </div>
                 </div>
 
                 <div className="mb-6">
-                  <label htmlFor="budget" className="block text-sm font-medium mb-2">
+                  <label
+                    htmlFor="budget"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Project Budget
                   </label>
                   <select
@@ -237,13 +265,18 @@ const Contact = () => {
                   >
                     <option value="">Select budget range</option>
                     {budgetRanges.map((range, index) => (
-                      <option key={index} value={range}>{range}</option>
+                      <option key={index} value={range}>
+                        {range}
+                      </option>
                     ))}
                   </select>
                 </div>
 
                 <div className="mb-8">
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Project Details *
                   </label>
                   <textarea
@@ -274,7 +307,7 @@ const Contact = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gray-800/50">
+      <section className="py-20 bg-gray-800/50 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -293,21 +326,25 @@ const Contact = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
-                question: 'How long does a typical project take?',
-                answer: 'Project timelines vary based on complexity and scope. Simple websites take 2-4 weeks, while complex applications can take 3-6 months. We provide detailed timelines during our initial consultation.'
+                question: "How long does a typical project take?",
+                answer:
+                  "Project timelines vary based on complexity and scope. Simple websites take 2-4 weeks, while complex applications can take 3-6 months. We provide detailed timelines during our initial consultation.",
               },
               {
-                question: 'Do you provide ongoing support?',
-                answer: 'Yes, we offer comprehensive post-launch support including bug fixes, updates, and maintenance. We also provide hosting and monitoring services to ensure your application runs smoothly.'
+                question: "Do you provide ongoing support?",
+                answer:
+                  "Yes, we offer comprehensive post-launch support including bug fixes, updates, and maintenance. We also provide hosting and monitoring services to ensure your application runs smoothly.",
               },
               {
-                question: 'What technologies do you specialize in?',
-                answer: 'We specialize in modern web technologies including React, Node.js, Python, and cloud platforms like AWS. We choose the best technology stack based on your specific project requirements.'
+                question: "What technologies do you specialize in?",
+                answer:
+                  "We specialize in modern web technologies including React, Node.js, Python, and cloud platforms like AWS. We choose the best technology stack based on your specific project requirements.",
               },
               {
-                question: 'Can you work with our existing team?',
-                answer: 'Absolutely! We can integrate with your existing development team, provide consulting services, or take full ownership of your project. We adapt to your preferred working style and communication methods.'
-              }
+                question: "Can you work with our existing team?",
+                answer:
+                  "Absolutely! We can integrate with your existing development team, provide consulting services, or take full ownership of your project. We adapt to your preferred working style and communication methods.",
+              },
             ].map((faq, index) => (
               <motion.div
                 key={index}
